@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+<include file="$(find pick_stretch)/launch/demo_gazebo.launch">
+</include>
+
+<include file="$(find pick_stretch)/launch/gazebo.launch">
+</include>
+
+
+</launch>

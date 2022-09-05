@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
 
   <arg name="paused" default="true"/>
@@ -9,7 +10,7 @@
   <arg name="model" default="$(find stretch_gazebo)/urdf/stretch_gazebo.urdf.xacro"/>
   <arg name="gpu_lidar" default="false"/>
   <arg name="visualize_lidar" default="false"/>
-  <arg name="world" default="worlds/empty.world"/>
+  <arg name="world" default="/home/exouser/catkin_ws/src/pick_stretch/pick_stretch/worlds/cubed_collision.world"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(arg world)" />
@@ -25,7 +26,7 @@
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-        args=" -urdf -model robot -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14" respawn="false" output="screen" />
+        args=" -urdf -model robot -x 0.366360 -y 1.571674 -z -0.000201 -param robot_description -J joint_lift 0.2 -J joint_wrist_yaw 3.14" respawn="false" output="screen" />
 
   <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="30.0" />
